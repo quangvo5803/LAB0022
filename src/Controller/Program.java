@@ -74,10 +74,16 @@ public class Program extends Menu<String> {
                 }
             } else {
                 System.out.println("Id has exist");
+                System.out.println();
                 break;
             }
 
             if (!Validation.getYesNo("Do you want to continue(Y,N): ").equalsIgnoreCase("Y")) {
+                System.out.println();
+                for (Candidate can : candidates){
+                    System.out.println(can.toString());
+                }
+                System.out.println();
                 break;
             }
         }
@@ -90,6 +96,7 @@ public class Program extends Menu<String> {
                 candidate.getBirthday(), candidate.getAddress(), candidate.getPhone(), candidate.getMail(),
                 candidate.getType(), yearExperience, skill));
         System.out.println("---------------Create success---------------");
+        System.out.println();
 
     }
 
@@ -100,6 +107,7 @@ public class Program extends Menu<String> {
                 candidate.getBirthday(), candidate.getAddress(), candidate.getPhone(), candidate.getMail(),
                 candidate.getType(), graduationDate, graduationRank));
         System.out.println("---------------Create success---------------");
+        System.out.println();
 
     }
 
@@ -111,6 +119,7 @@ public class Program extends Menu<String> {
                 candidate.getBirthday(), candidate.getAddress(), candidate.getPhone(), candidate.getMail(),
                 candidate.getType(), major, semester, university));
         System.out.println("---------------Create success---------------");
+        System.out.println();
 
     }
 
@@ -118,6 +127,7 @@ public class Program extends Menu<String> {
         System.out.println();
         if (candidates.isEmpty()) {
             System.out.println("---------------List empty---------------");
+            System.out.println();
             return;
         }
         System.out.println("---------------------------------------------");
@@ -126,6 +136,7 @@ public class Program extends Menu<String> {
         String nameSearch = Validation.getString("Enter name to search(First name or Last name): ");
         int count = 0;
         int type = Validation.getInt("Enter type of candidate: ", 0, 2);
+        System.out.println();
         for (Candidate c : candidates) {
             if (c.getType() == type && c.getFirstName().contains(nameSearch) || c.getLastName().contains(nameSearch)) {
                 System.out.println(c.toString());
@@ -135,10 +146,12 @@ public class Program extends Menu<String> {
         if (count == 0) {
             System.out.println("Cannot found");
         }
+        System.out.println();
     }
 
     public static void printListNameCandidate(ArrayList<Candidate> candidates) {
         System.err.println("---------------Experience Candidate---------------");
+        System.out.println();
         for (Candidate candidate : candidates) {
             if (candidate instanceof Experiance) {
                 System.out.println(candidate.getFirstName() + " "
@@ -146,6 +159,7 @@ public class Program extends Menu<String> {
             }
         }
         System.err.println("---------------Fresher Candidate---------------");
+        System.out.println();
         for (Candidate candidate : candidates) {
             if (candidate instanceof Fresher) {
                 System.out.println(candidate.getFirstName() + " "
@@ -153,6 +167,7 @@ public class Program extends Menu<String> {
             }
         }
         System.err.println("---------------Internship Candidate---------------");
+        System.out.println();
         for (Candidate candidate : candidates) {
             if (candidate instanceof Intership) {
                 System.out.println(candidate.getFirstName() + " "
