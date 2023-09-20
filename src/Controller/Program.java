@@ -77,7 +77,7 @@ public class Program extends Menu<String> {
                 break;
             }
             
-            if(!Validation.getYesNo("Do you want to continue(Y,N)").equalsIgnoreCase("Y")){
+            if(!Validation.getYesNo("Do you want to continue(Y,N): ").equalsIgnoreCase("Y")){
                 break;
             }
         }
