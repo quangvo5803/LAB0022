@@ -33,6 +33,7 @@ public class Program extends Menu<String> {
             }
             case 3:{
                 createCandidate(candidates, 2);
+                break;
             }
             case 4:{
                 search(candidates);
