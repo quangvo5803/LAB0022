@@ -138,7 +138,7 @@ public class Program extends Menu<String> {
         int type = Validation.getInt("Enter type of candidate: ", 0, 2);
         System.out.println();
         for (Candidate c : candidates) {
-            if (c.getType() == type && c.getFirstName().contains(nameSearch) || c.getLastName().contains(nameSearch)) {
+            if (c.getType() == type && (c.getFirstName().contains(nameSearch) || c.getLastName().contains(nameSearch))) {
                 System.out.println(c.toString());
                 count++;
             }
